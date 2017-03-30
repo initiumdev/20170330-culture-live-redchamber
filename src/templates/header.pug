@@ -1,0 +1,12 @@
+include ./icon.pug
+
+header.header(style={ background: config.styles.header.background })
+  section
+    h3.header__title
+      div
+        span !{event.header[0]}
+      div
+        span !{event.header[1]}
+        + icon('live')
+  section
+    + icon('logo')

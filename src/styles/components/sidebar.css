@@ -1,0 +1,97 @@
+.sidebar {
+  position: relative;
+  padding: var(--gutter);
+  background-color: #ececec;
+  color: var(--color-black);
+  overflow: scroll;
+
+  &__meta {
+    h2 {
+      margin: 0;
+      margin-bottom: .5em;
+    }
+
+    /* party */
+    small {
+      position: absolute 0 * * 7em;
+      height: 100%;
+      line-height: 3;
+      pointer-events: none;
+    }
+
+    /* select */
+    .select {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: .5em;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute 50% .5em * *;
+        size: 0;
+        margin-top: -.25em;
+        pointer-events: none;
+        border-top: .5em solid var(--color-initium);
+        border-right: .5em solid transparent;
+        border-bottom: .5em solid transparent;
+        border-left: .5em solid transparent;
+        transition: all .2s ease-in-out;
+      }
+
+      &.single {
+        &:after {
+          display: none;
+        }
+
+        select {
+          cursor: default;
+        }
+      }
+
+      select {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0 2.25em 0 0;
+        line-height: 1.5;
+        font-size: 1.5em;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-black);
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid var(--color-initium);
+        border-radius: 0;
+        cursor: pointer;
+        outline: 0;
+        appearance: none;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+  &__description {
+    margin-top: calc(var(--gutter) * 2);
+    padding: calc(var(--gutter) / 2);
+    background-color: var(--color-white);
+
+    p {
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+  &__comments {
+    margin-top: var(--gutter);
+    background-color: var(--color-white);
+  }
+
+  @media(--all-mobile-devices) {
+    height: auto;
+    padding: calc(var(--gutter) / 2);
+    font-size: .875em;
+  }
+  @media(--all-mobile-devices-landscape) {
+    padding: var(--gutter);
+  }
+}

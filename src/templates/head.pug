@@ -1,0 +1,31 @@
+- const title = (event.isEnd && (event.youtube_video || event.video) ? '[回放] ' : '[直播] ') +  config.title + ' | 端傳媒 Initium Media';
+- const share_url = config.permalink + event.speaker.screen_name;
+- const share_image_url = config.permalink + 'public/images/' + 'cover-' + event.speaker.screen_name + '.jpg';
+
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  title=title
+  meta(name='keywords', content=config.keywords)
+  meta(name='description', content=event.description.join(''))
+  meta(
+    name='viewport'
+    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+  )
+  link(ref='icon', type='image/x-icon', href='../public/assets/favicon.ico?v=' + version)
+  link(ref='shortcut icon', href='../public/assets/favicon.ico?v=' + version)
+
+  meta(property='og:type', content='website')
+  meta(property='og:title', content=title)
+  meta(property='og:url', content=share_url)
+  meta(property='og:description', content=config.description)
+  meta(property='og:image', content=share_image_url)
+
+  meta(name='twitter:card', content='summary')
+  meta(name='twitter:title', content=title)
+  meta(name='twitter:description', content=config.description)
+  meta(name='twitter:creator', content=config.twitter)
+  meta(name='twitter:image:src', content=share_image_url)
+
+  link(rel='stylesheet', type='text/css', href='../public/build.min.css?v=' + version)
+

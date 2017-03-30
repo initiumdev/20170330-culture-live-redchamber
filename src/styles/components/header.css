@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(var(--gutter) * 3);
+  padding: calc(var(--gutter) / 2) var(--gutter);
+  color: var(--color-white);
+
+  h3 {
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+  }
+
+  .icon {
+    &--live {
+      height: 1em;
+      margin-left: .5em;
+    }
+    &--logo {
+      height: 2.7em;
+    }
+  }
+
+  @media(--all-mobile-devices) {
+    height: calc(var(--gutter) * 2);
+    padding: calc(var(--gutter) / 2);
+
+    h3 {
+      font-size: .875em;
+    }
+    .icon {
+      &--logo {
+        height: 2em;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+include ./icon.pug
+
+main.main
+  section.main__video
+    if event.youtube_video
+      iframe(
+        src=event.youtube_video
+        frameborder="0"
+        allowfullscreen
+      )
+    else if event.video
+      video(src=event.video controls) 你的瀏覽器不支持 HTML5 視頻
+    else
+      .preview(style={ background: config.styles.preview.background })
+        .preview__avatar
+          img(src='../public/images/avatar-' + event.speaker.screen_name + '.jpg')
+        .preview__meta
+          section
+            h1 #{event.speaker.name}
+            p #{event.speaker.description}
+          section
+            + icon('live')
+          section
+            h1
+              if event.isEnd
+                span 直播結束
+              else
+                time(datetime=event.time_string) !{event.time.split('&nbsp;&nbsp;')[1]}

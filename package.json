@@ -1,0 +1,39 @@
+{
+  "name": "20170310-live-party-music",
+  "version": "0.2.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "deploy": "gh-pages-deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.7.1",
+    "gh-pages-deploy": "^0.4.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-data": "^1.2.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-pug": "^3.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^1.5.4",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-short": "^1.4.0",
+    "pug": "^2.0.0-beta3",
+    "shelljs": "^0.7.3"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "build",
+    "prep": [
+      "build"
+    ],
+    "noprompt": false
+  }
+}

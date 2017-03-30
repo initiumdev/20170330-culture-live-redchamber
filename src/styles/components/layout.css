@@ -1,0 +1,36 @@
+html {
+  size: 100%;
+  overflow: hidden;
+  background-color: var(--color-gray-light);
+
+  @media(--all-mobile-devices) {
+    overflow: auto;
+  }
+}
+body {
+  size: 100%;
+
+  > svg {
+    position: absolute;
+    size: 0;
+  }
+}
+
+.container {
+  display: flex;
+  position: absolute 0 * * 0;
+  size: 100%;
+  padding-top: calc(var(--gutter) * 3);
+
+  .main {
+    flex-basis: 66.7%;
+  }
+  .sidebar {
+    flex-basis: 33.3%;
+  }
+
+  @media(--all-mobile-devices) {
+    display: block;
+    padding-top: calc(var(--gutter) * 2);
+  }
+}

@@ -1,0 +1,11 @@
+mixin icon(name)
+  - const viewBox = {};
+  - viewBox.logo = '0 0 100 100';
+  - viewBox.live = '0 0 65 30';
+
+  svg(
+    class="icon icon--" + name
+    viewBox=viewBox[name]
+    xmlns="http://www.w3.org/2000/svg"
+  )
+    use(xlink:href="#" + name)

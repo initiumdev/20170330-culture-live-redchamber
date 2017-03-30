@@ -1,0 +1,42 @@
+:root {
+  --font-family-base: "Helvetica Neue", "Helvetica", "PingFang TC", "Lantinghei TC", "Arial", sans-serif;
+  --font-family-sans: "Hoefler Text", "Songti TC", serif;
+  --font-family-mono: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  --line-height-base: 1.4;
+
+  --font-size-xx-small: 9px;
+  --font-size-small: 12px;
+  --font-size-base: 14px;
+  --font-size-regular: 16px;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  --color-initium: #31AFBE;
+  --color-initium-light: #CDF0F5;
+  --color-facebook: #395A9D;
+  --color-facebook-light: #4080ff;
+  --color-red: #E03E51;
+  --color-green: #59DE5D;
+  --color-black: #4A4A4A;
+  --color-white: #fff;
+  --color-gray: #E3E3E3;
+  --color-gray-light: #F2F2F2;
+  --color-gray-dark: #838383;
+  --color-steel: #666;
+
+  --gutter: 30px;
+}
+
+
+@custom-media --all-mobile-devices (max-width: 1024px);
+@custom-media --all-mobile-devices-portrait (max-width: 1024px) and (orientation: portrait);
+@custom-media --all-mobile-devices-landscape (max-width: 1024px) and (orientation: landscape);
+@custom-media --phone (max-width: 767px);
+@custom-media --phone-portrait (max-width: 767px) and (orientation : portrait);
+@custom-media --phone-landscape (max-width: 767px) and (orientation : landscape);
+@custom-media --tablet (min-width: 767px) and (max-width: 1024px);
+@custom-media --tablet-portrait (min-width: 767px) and (max-width: 1024px) and (orientation: portrait);
+@custom-media --tablet-landscape (min-width: 767px) and (max-width: 1024px) and (orientation: landscape);
+@custom-media --large-screen (max-width: 1824px);

@@ -1,0 +1,27 @@
+include ./icon.pug
+
+aside.sidebar(style={ background: config.styles.sidebar.background })
+
+  section.sidebar__meta
+    form
+      div.select(class={single:_events.length <= 1})
+        if (event.speaker.party)
+          small #{event.speaker.party}
+
+        select.js-select(
+          aria-label="select events"
+          data-current-speaker=event.speaker.screen_name
+          disabled=_events.length <= 1
+        )
+          each e in _events
+            - var selected = e.speaker.screen_name === event.speaker.screen_name;
+            option(value=e.speaker.screen_name selected=selected) #{e.speaker.name}
+    p
+      span.float--left.js-event-speaker-desc !{event.speaker.description}
+      time.float--right.js-event-time(datetime=event.time_string) !{event.time}
+
+  section.sidebar__description
+    each paragraph in event.description
+      p !{paragraph.replace(/(請到端傳媒 Facebook 專頁留言)/, '<a href="https://www.facebook.com/theinitium/" target="_blank">$1</a>')}
+
+  include footer.pug

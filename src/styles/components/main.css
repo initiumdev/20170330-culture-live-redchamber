@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--gutter);
+  overflow: hidden;
+
+  @media(--all-mobile-devices) {
+    height: auto;
+    padding: 0;
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    background-color: var(--color-black);
+    overflow: hidden;
+
+    iframe,
+    video {
+      position: absolute 0 * * 0;
+      size: 100%;
+    }
+  }
+}
