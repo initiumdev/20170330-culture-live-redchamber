@@ -13,7 +13,7 @@ main.main
     else
       .preview(style={ background: config.styles.preview.background })
         .preview__avatar
-          img(src='../public/images/avatar-' + event.speaker.screen_name + '.jpg')
+          img(src=relatedPath + 'public/images/avatar-' + event.speaker.screen_name + '.jpg')
         .preview__meta
           section
             h1 #{event.speaker.name}

@@ -73,6 +73,7 @@ const TEMPLTES_PATH = path.resolve(SRC_PATH, 'templates');
 gulp.task('templates', ['scripts', 'styles', 'svg'], () => {
   const config = JSON.parse(fs.readFileSync(CONFIG));
   const version = require('./package.json').version;
+  const isSingleEvent = config.events.length <= 1;
 
   // Events Page
   const _events = [];
@@ -86,12 +87,12 @@ gulp.task('templates', ['scripts', 'styles', 'svg'], () => {
 
   config.events.forEach(event => {
     gulp.src(`${TEMPLTES_PATH}/index.pug`)
-    .pipe(data(() => ({ version, config, event, _events })))
+    .pipe(data(() => ({ version, config, event, relatedPath: isSingleEvent ? './' : '../', _events })))
     .pipe(pug({
       pretty: false,
     }))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest(path.resolve(BUILD_PATH, config.events.length > 1 ? event.speaker.screen_name : '')));
+    .pipe(gulp.dest(path.resolve(BUILD_PATH, isSingleEvent ? '' : event.speaker.screen_name)));
   });
 
   // Home Page
