@@ -91,7 +91,7 @@ gulp.task('templates', ['scripts', 'styles', 'svg'], () => {
       pretty: false,
     }))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest(path.resolve(BUILD_PATH, event.speaker.screen_name)));
+    .pipe(gulp.dest(path.resolve(BUILD_PATH, config.events.length > 1 ? event.speaker.screen_name : '')));
   });
 
   // Home Page
